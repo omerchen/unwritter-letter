@@ -1,0 +1,118 @@
+// Layout
+$content-container-width: 1280px;
+$minimum-border-width: 50px;
+$gradient-solid-height: 100vh;
+$gradient-height: 300vh;
+
+// Defaults
+$text-default-size: 1.6rem;
+$text-default-small-size: 1.4rem;
+$text-default-big-size: 2rem;
+$margin-small-default-size: .5rem;
+$margin-medium-default-size: 1rem;
+$margin-large-default-size: 1.5rem;
+$image-small-default-size: 2.6rem;
+$padding-default: 2rem;
+
+
+// Responsive Breakpoints
+$narrow-display-width: 950px;
+$minimal-search-appear-screen-width: 810px;
+$maximum-single-column-view-screen-width: 850px;
+$minimal-navbar-screen-width: 575px;
+$minimal-pazam-box-visibility-screen-width: 1185px;
+
+// Navbar
+$navbar-height: 6rem;
+$navbar-default-font-size: 1.5rem;
+$navbar-menu-btn-width: 7rem;
+$navbar-icon-height: 2rem;
+$navbar-profile-picture-height: 2.5rem;
+$navbar-profile-picture-scale-ration: $navbar-profile-picture-height / $navbar-icon-height;
+$navbar-btn-underline-width: 0.4rem;
+$navbar-border-width: 1px; // really small size so better in Pixels for performence & prevent ui bugs in custom browser preferences
+
+// Navbar - Search
+$navbar-search-width: 35rem;
+$navbar-search-narrow-display-width: 20rem;
+$navbar-search-height: 3.5rem;
+$navbar-search-icon-height: 1.8rem;
+$navbar-search-icon-width: $navbar-search-icon-height; // bydefault will be square icon
+$navbar-search-font-size: 1.7rem;
+$navbar-search-sides-padding: 1.3rem;
+
+// Checkbox
+$checkbox-default-size: $text-default-size;
+
+// Card
+$card-big-title-size: 3.2rem;
+$card-small-title-size: 2.5rem;
+$card-content-default-padding: $margin-large-default-size;
+$card-header-default-margin-bottom: $card-content-default-padding;
+$card-date-size: 1.3rem;
+$card-footer-height: 3.5rem;
+$card-footer-title-size: 1.5rem;
+$card-border-radius: 0.4rem;
+$card-item-row-gap: $card-content-default-padding;
+$card-hr-width: 0.05rem;
+
+// Item
+$item-image-default-size: 10rem;
+$item-image-default-medium-size: 7rem;
+$item-image-default-margin-bottom: .5rem;
+$item-default-width: 16rem;
+$item-border-width: 0.05rem;
+$itemp-stamp-font-size: $text-default-big-size;
+$itemp-stamp-min-width: 6rem;
+$itemp-stamp-border-width: 0.25rem;
+$itemp-stamp-sides-padding: 0.5rem;
+
+// Home
+$home-padding: $padding-default;
+$home-margin-between-cards: $home-padding;
+$home-side-columns-card-width: 23.5rem;
+$home-main-column-minimal-card-width: $home-side-columns-card-width;
+$home-full-column-view-card-width: 42rem;
+$home-profile-box-watch-profile-font-size: $text-default-small-size;
+$home-profile-box-profile-pic-size: 7.2rem;
+$home-profile-box-box-image-size: $image-small-default-size;
+$home-about-box-font-size: $text-default-size;
+$home-about-box-logo-height: $item-image-default-medium-size;
+$home-skill-box-header-font-size: 1.7rem;
+$home-skill-box-add-btn-size: 2.3rem;
+$home-skill-box-image-size: $image-small-default-size;
+$home-reserve-box-box-image-size: $image-small-default-size;
+
+// User Page
+$userpage-padding: $padding-default;
+$userpage-about-box-font-size: $text-default-size;
+$userpage-also-view-box-image-size: $item-image-default-medium-size;
+$userpage-also-view-box-name-font-size: $text-default-size;
+$userpage-also-view-box-description-font-size: $text-default-small-size;
+$userpage-personal-details-font-size: $text-default-small-size;
+$userpage-personal-details-property-space-width: .2rem;
+$userpage-personal-icon-width: 1.8rem;
+$userpage-profile-picture-size: 17rem;
+$userpage-profile-picture-border-width: .4rem;
+$userpage-cover-picture-height: 20rem;
+$userpage-profile-header-content-height: 9rem;
+$userpage-profile-picture-right-margin: 2rem;
+$userpage-profile-picture-name-font-size: 2.8rem;
+$userpage-profile-picture-description-font-size: $text-default-big-size;
+$userpage-profile-header-link-image-height: 3.5rem;
+
+// Not Found View
+$notfoundview-margin-size: 5rem;
+$notfoundview-header-size: 5rem;
+$notfoundview-text-size: 2rem;
+$notfoundview-image-margin-bottom: 2rem;
+$notfoundview-detective-image-width: 15rem;
+
+// Checkbox
+$cbx-min-width: 10rem;
+$cbx-border-radius: .3rem;
+$cbx-border-width: .2rem;
+$cbx-sides-margin: 2rem;
+
+// Filter Toolbar
+$filtertoolbar-space-between-cbx-rows: .5rem;

@@ -1,0 +1,24 @@
+@import './utils/Style/Fonts.scss';
+
+/* Global Reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Entire Page Rules */
+  html  {
+      /* Font Rules */
+      font-family: $default-font;
+      font-size: 62.5%; /* Reset the font to 10px default for normal users but keep the support for reading disabilities users*/
+  }
+
+  
+// Font Definitions
+@font-face {
+    font-family: 'Assistant';
+    src: url('./assets/fonts/mechonatdfusregularwebfont.ttf');
+    font-style: normal;
+    font-weight: $font-weight-regular;
+}
