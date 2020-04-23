@@ -1,10 +1,14 @@
-import React, { useState } from "react";
-import logo from "./assets/images/logo.svg";
+import React, { useState, useEffect } from "react";
+import logo from "./assets/images/logo.png";
 import "./App.scss";
+import ReactGA from "react-ga";
 
 const App = (props) => {
   const [isFinish, setIsFinish] = useState(false);
-  const currentTime = new Date()
+  const [to, setTo] = useState("");
+  const [from, setFrom] = useState("");
+  const [content, setContent] = useState("");
+  const currentTime = new Date();
   const scrollTop = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -13,31 +17,77 @@ const App = (props) => {
   const reloadSite = () => {
     scrollTop();
     setIsFinish(false);
+    setTo("");
+    setFrom("");
+    setContent("");
   };
+
+  function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+  
+    element.style.display = 'none';
+    document.body.appendChild(element);
+  
+    element.click();
+  
+    document.body.removeChild(element);
+  }
+
+  useEffect(() => {
+    ReactGA.initialize("UA-164324069-1");
+  }, []);
 
   const letterView = (
     <>
       <div className="letter">
-        <div className="date">{currentTime.getDate()+"."+(currentTime.getMonth()+1)+"."+currentTime.getFullYear()}</div>
+        <div className="date">
+          {currentTime.getDate() +
+            "." +
+            (currentTime.getMonth() + 1) +
+            "." +
+            currentTime.getFullYear()}
+        </div>
         <div className="head">
           <div className="field">
             <label>מכתב עבור</label>
-            <input type="text" placeholder="שם הנמען" />
+            <input
+              type="text"
+              placeholder="שם הנמען"
+              value={to}
+              onChange={(e) => setTo(e.target.value)}
+            />
           </div>
           <div className="field">
             <label>מאת</label>
-            <input type="text" placeholder="שמך (לא חובה)" />
+            <input
+              type="text"
+              placeholder="שמך (לא חובה)"
+              value={from}
+              onChange={(e) => setFrom(e.target.value)}
+            />
           </div>
         </div>
         <div className="body">
-          <textarea placeholder="כתבו כאן את תוכן המכתב..." />
+          <textarea
+            placeholder="כתבו כאן את תוכן המכתב..."
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+          />
         </div>
       </div>
       <button
         className="button"
+        disabled={content==""||to==""}
         onClick={() => {
           scrollTop();
           setIsFinish(true);
+          ReactGA.event({
+            category: "letter/debug",
+            action: to,
+            label: from,
+          });
         }}
       >
         שלח
@@ -49,10 +99,12 @@ const App = (props) => {
     <div className="finish">
       <h4>תודה על המכתב!</h4>
       <h5>תוכן המכתב לא נשמר בשום מקום, מקווים שעזרנו</h5>
-      <div
-        class="button"
-        onClick={reloadSite}
-      >
+      <div class="button" onClick={()=>{
+        download(to+".txt", content)
+      }}>
+        שמור מכתב
+      </div>
+      <div class="button" onClick={reloadSite}>
         כתוב מכתב נוסף
       </div>
     </div>
