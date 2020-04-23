@@ -17,8 +17,50 @@
   
 // Font Definitions
 @font-face {
-    font-family: 'Assistant';
+    font-family: 'MechonatDfus';
     src: url('./assets/fonts/mechonatdfusregularwebfont.ttf');
     font-style: normal;
     font-weight: $font-weight-regular;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('./assets/fonts/Assistant-ExtraLight.ttf');
+    font-style: normal;
+    font-weight: $font-weight-extra-light;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('./assets/fonts/Assistant-Light.ttf');
+    font-style: normal;
+    font-weight: $font-weight-light;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('./assets/fonts/Assistant-Regular.ttf');
+    font-style: normal;
+    font-weight: $font-weight-regular;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('./assets/fonts/Assistant-SemiBold.ttf');
+    font-style: normal;
+    font-weight: $font-weight-semi-bold;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('./assets/fonts/Assistant-Bold.ttf');
+    font-style: normal;
+    font-weight: $font-weight-bold;
+}
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('./assets/fonts/Assistant-ExtraBold.ttf');
+    font-style: normal;
+    font-weight: $font-weight-extra-bold;
 }
