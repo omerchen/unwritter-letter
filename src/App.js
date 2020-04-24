@@ -105,6 +105,7 @@ const App = (props) => {
             category: "letter" + GA_POSTFIX,
             action: to,
             label: from,
+            value: content?content.length:0
           });
         }}
       >
