@@ -143,7 +143,7 @@ const App = (props) => {
       <h5>תוכן המכתב לא נשמר בשום מקום</h5>
       <h6>שיתוף מכתב:</h6>
       <div className="iconsWrapper">
-        <FacebookShareButton url="https://unwritten-letter.now.sh" quote={"מכתב ל"+to+".\n\n"+content+"\n\nרוצים גם אתם לכתוב מכתב?\n"}>
+        <FacebookShareButton url="https://unwritten-letter.now.sh" quote={"מכתב שלא נכתב ל"+to+".\n\n"+content+"\n\nרוצים גם אתם לכתוב מכתב?\n"}>
           <FacebookIcon round size={55} onClick={()=>{
             ReactGA.event({
               category: "facebookLetterShare" + GA_POSTFIX,
@@ -153,7 +153,7 @@ const App = (props) => {
             });
           }} />
         </FacebookShareButton>
-        <WhatsappShareButton url="https://unwritten-letter.now.sh" title={"מכתב ל"+to+".\n\n"+content+"\n\nרוצים גם אתם לכתוב מכתב?\n"}>
+        <WhatsappShareButton url="https://unwritten-letter.now.sh" title={"מכתב שלא נכתב ל"+to+".\n\n"+content+"\n\nרוצים גם אתם לכתוב מכתב?\n"}>
           <WhatsappIcon round size={55} onClick={()=>{
             ReactGA.event({
               category: "whatsappLetterShare" + GA_POSTFIX,
@@ -163,7 +163,7 @@ const App = (props) => {
             });
           }} />
         </WhatsappShareButton>
-        <EmailShareButton url="https://unwritten-letter.now.sh" subject={"מכתב ל"+to} body={content+"\n\nרוצים גם אתם לכתוב מכתב?\n"}>
+        <EmailShareButton url="https://unwritten-letter.now.sh" subject={"מכתב שלא נכתב ל"+to} body={content+"\n\nרוצים גם אתם לכתוב מכתב?\n"}>
           <EmailIcon round size={55} onClick={()=>{
             ReactGA.event({
               category: "emailLetterShare" + GA_POSTFIX,
