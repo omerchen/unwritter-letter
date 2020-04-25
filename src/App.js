@@ -3,8 +3,31 @@ import logo from "./assets/images/logo.png";
 import "./App.scss";
 import ReactGA from "react-ga";
 import Modal from "react-awesome-modal";
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  InstapaperShareButton,
+  LineShareButton,
+  LinkedinShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+  OKShareButton,
+  PinterestShareButton,
+  PocketShareButton,
+  RedditShareButton,
+  TelegramShareButton,
+  TumblrShareButton,
+  TwitterShareButton,
+  ViberShareButton,
+  VKShareButton,
+  WhatsappShareButton,
+  WorkplaceShareButton,
+  FacebookIcon,
+  WhatsappIcon,
+  EmailIcon,
+} from "react-share";
 
-const GA_POSTFIX = "/";
+const GA_POSTFIX = "";
 
 const App = (props) => {
   const [isFinish, setIsFinish] = useState(false);
@@ -105,7 +128,7 @@ const App = (props) => {
             category: "letter" + GA_POSTFIX,
             action: to,
             label: from,
-            value: content?content.length:0
+            value: content ? content.length : 0,
           });
         }}
       >
@@ -118,6 +141,41 @@ const App = (props) => {
     <div className="finish">
       <h4>תודה על המכתב!</h4>
       <h5>תוכן המכתב לא נשמר בשום מקום</h5>
+      <h6>שיתוף מכתב:</h6>
+      <div className="iconsWrapper">
+        <FacebookShareButton url="https://unwritten-letter.now.sh" quote={"מכתב ל"+to+".\n\n"+content+"\n\nרוצים גם אתם לכתוב מכתב?\n"}>
+          <FacebookIcon round size={55} onClick={()=>{
+            ReactGA.event({
+              category: "facebookLetterShare" + GA_POSTFIX,
+              action: to,
+              label: from,
+              value: content ? content.length : 0,
+            });
+          }} />
+        </FacebookShareButton>
+        <WhatsappShareButton url="https://unwritten-letter.now.sh" title={"מכתב ל"+to+".\n\n"+content+"\n\nרוצים גם אתם לכתוב מכתב?\n"}>
+          <WhatsappIcon round size={55} onClick={()=>{
+            ReactGA.event({
+              category: "whatsappLetterShare" + GA_POSTFIX,
+              action: to,
+              label: from,
+              value: content ? content.length : 0,
+            });
+          }} />
+        </WhatsappShareButton>
+        <EmailShareButton url="https://unwritten-letter.now.sh" subject={"מכתב ל"+to} body={content+"\n\nרוצים גם אתם לכתוב מכתב?\n"}>
+          <EmailIcon round size={55} onClick={()=>{
+            ReactGA.event({
+              category: "emailLetterShare" + GA_POSTFIX,
+              action: to,
+              label: from,
+              value: content ? content.length : 0,
+            });
+          }} />
+        </EmailShareButton>
+      </div>
+      <h6>אפשרויות נוספות:</h6>
+
       <div
         class="button"
         onClick={() => {
@@ -189,6 +247,17 @@ const App = (props) => {
       </header>
       <main>{isFinish ? finishView : letterView}</main>
       <footer>
+        <div className="iconsWrapper">
+          <FacebookShareButton url="https://unwritten-letter.now.sh">
+            <FacebookIcon round size={25} />
+          </FacebookShareButton>
+          <WhatsappShareButton url="https://unwritten-letter.now.sh">
+            <WhatsappIcon round size={25} />
+          </WhatsappShareButton>
+          <EmailShareButton url="https://unwritten-letter.now.sh">
+            <EmailIcon round size={25} />
+          </EmailShareButton>
+        </div>
         <p>הפרויקט הוקם ע״י שיר לשם ועומר חן</p>
         <p>
           צרו איתנו קשר:{" "}

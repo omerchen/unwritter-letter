@@ -30,8 +30,7 @@ body {
     transition: ease-out 200ms;
     font-size: 2.2rem;
     cursor: pointer;
-    
-    
+
     &:focus,
     &:hover {
       outline: none;
@@ -78,7 +77,8 @@ header {
     visibility: hidden;
   }
 
-  h2,h3 {
+  h2,
+  h3 {
     color: white;
     font-size: 2.6rem;
     margin-bottom: 1rem;
@@ -100,6 +100,14 @@ header {
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .iconsWrapper .react-share__ShareButton {
+    margin: 0.4rem;
+  }
+
   p {
     font-family: "Assistant", sans-serif;
     color: white;
@@ -130,7 +138,7 @@ footer {
 
 main {
   margin-top: 2rem;
-  margin-bottom: 8rem;
+  margin-bottom: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,17 +152,32 @@ main {
     flex-direction: column;
     align-items: center;
 
+    .iconsWrapper {
+      margin-bottom: 2rem;
+      .react-share__ShareButton {
+        margin: 0.4rem;
+      }
+    }
+
     h4 {
       color: white;
       font-size: 5rem;
       text-align: center;
       margin-bottom: 0.5rem;
     }
+
     h5 {
       color: $yellow-color;
       font-size: 2.3rem;
       text-align: center;
       margin-bottom: 3rem;
+    }
+
+    h6 {
+      color: white;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -176,7 +199,7 @@ main {
     }
     &:disabled {
       background-color: rgba($dark-yellow-color, 0.5) !important;
-      color: rgba(black,0.5);
+      color: rgba(black, 0.5);
       transform: translateY(0) !important;
       box-shadow: rgba(black, 0.2) 0px 2px 10px !important;
       cursor: not-allowed;
@@ -257,10 +280,10 @@ main {
       position: relative;
       textarea {
         position: absolute;
-        top:0;
-        right:0;
+        top: 0;
+        right: 0;
         width: 100%;
-        bottom:0;
+        bottom: 0;
         padding: 3rem;
         resize: none;
         font-family: "MechonatDfus", "Assistant", Arial, Helvetica, sans-serif;
@@ -281,4 +304,9 @@ main {
       color: gray;
     }
   }
+}
+
+button:active,
+button:focus {
+  outline: none;
 }
